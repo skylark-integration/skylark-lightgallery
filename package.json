@@ -1,0 +1,55 @@
+{
+  "name": "skylark-lightgallery",
+  "version": "0.9.0",
+  "description": "The skylark album widgets.",
+  "main": "-",
+  "scripts": {
+    "build": "slib build .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "www.skylarkjs.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skylark-integration/skylark-lightgallery..git"
+  },
+  "keywords": [
+    "gallery",
+    "skylark",
+    "skylarkjs",
+    "javacript",
+    "library",
+    "blueimp",
+    "html5"
+  ],
+  "author": "Hudaokeji Co.,Ltd",
+  "license": "MIT",
+  "bugs": "https://github.com/skylark-integration/skylark-lightgallery./issues",
+  "dependencies": {
+    "skylark-langx": "https://github.com/skylark-langx/skylark-langx",
+    "skylark-jquery": "https://github.com/skylark-integration/skylark-jquery"
+  },
+  "skylarkjs": {
+    "directories": {
+      "dependencies": "./node_modules"
+    },
+    "secondaries": {},
+    "build": {
+      "prepare": {
+        "texttojs": [
+          "html",
+          "json",
+          "css"
+        ],
+        "jsxtojs": false,
+        "es6toamd": false,
+        "cjstoamd": false
+      },
+      "bundles": {
+        "all": true
+      }
+    }
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

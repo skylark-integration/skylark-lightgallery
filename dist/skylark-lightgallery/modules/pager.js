@@ -1,0 +1,9 @@
+/**
+ * skylark-lightgallery - The skylark album widgets.
+ * @author Hudaokeji Co.,Ltd
+ * @version v0.9.0
+ * @link www.skylarkjs.org
+ * @license MIT
+ */
+define(["skylark-jquery","../light-gallery"],function(e,s){"use strict";var a={pager:!1},r=function(s){return this.core=e(s).data("lightGallery"),this.$el=e(s),this.core.s=e.extend({},a,this.core.s),this.core.s.pager&&this.core.$items.length>1&&this.init(),this};r.prototype.init=function(){var s,a,r,t=this,n="";if(t.core.$outer.find(".lg").append('<div class="lg-pager-outer"></div>'),t.core.s.dynamic)for(var c=0;c<t.core.s.dynamicEl.length;c++)n+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+t.core.s.dynamicEl[c].thumb+'" /></div></span>';else t.core.$items.each(function(){t.core.s.exThumbImage?n+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+e(this).attr(t.core.s.exThumbImage)+'" /></div></span>':n+='<span class="lg-pager-cont"> <span class="lg-pager"></span><div class="lg-pager-thumb-cont"><span class="lg-caret"></span> <img src="'+e(this).find("img").attr("src")+'" /></div></span>'});(a=t.core.$outer.find(".lg-pager-outer")).html(n),(s=t.core.$outer.find(".lg-pager-cont")).on("click.lg touchend.lg",function(){var s=e(this);t.core.index=s.index(),t.core.slide(t.core.index,!1,!0,!1)}),a.on("mouseover.lg",function(){clearTimeout(r),a.addClass("lg-pager-hover")}),a.on("mouseout.lg",function(){r=setTimeout(function(){a.removeClass("lg-pager-hover")})}),t.core.$el.on("onBeforeSlide.lg.tm",function(e,a,r){s.removeClass("lg-pager-active"),s.eq(r).addClass("lg-pager-active")})},r.prototype.destroy=function(){},e.fn.lightGallery.modules.pager=r});
+//# sourceMappingURL=../sourcemaps/modules/pager.js.map
